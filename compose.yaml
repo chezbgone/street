@@ -1,0 +1,53 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: ./server/Dockerfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - '3000:3000'
+    depends_on:
+      - cache
+    configs:
+      - source: config
+        target: /server/config.toml
+    secrets:
+      - source: secrets
+        target: /server/secrets.toml
+  bot:
+    build:
+      context: .
+      dockerfile: ./bot/Dockerfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - cache
+    configs:
+      - source: config
+        target: /bot/config.toml
+    secrets:
+      - source: secrets
+        target: /bot/secrets.toml
+  cache:
+    image: redis:alpine
+    ports:
+      - '6379:6379'
+    volumes:
+      - cache:/data
+    healthcheck:
+      test: ["CMD", "redis-cli","ping"]
+      timeout: 1s
+      interval: 1s
+      retries: 10
+
+configs:
+  config:
+    file: ./config.toml
+
+secrets:
+  secrets:
+    file: ./secrets.toml
+
+volumes:
+  cache:

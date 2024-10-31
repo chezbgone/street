@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "street-bot-server"
+version = "0.1.0"
+description = ""
+authors = ["chezbgone <chezbgone@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+hypercorn = "^0.17.3"
+quart = "^0.19.8"
+redis = "^5.2.0"
+common = {path = "../common"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
