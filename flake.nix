@@ -11,6 +11,7 @@
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
+          COMPOSE_FILE = "compose.yaml:compose-dev.yaml";
           packages = with pkgs; [
             podman
             poetry
