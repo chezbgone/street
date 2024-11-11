@@ -1,1 +1,1 @@
-# street-bot/server
+# street/server

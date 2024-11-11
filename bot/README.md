@@ -1,1 +1,1 @@
-# street-bot/bot
+# street/bot
