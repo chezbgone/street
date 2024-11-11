@@ -6,7 +6,7 @@ from discord.ext import commands
 import redis.asyncio as redis
 from common.models import TwitchMessage
 
-from config import CONFIG
+from common.config import CONFIG
 
 LOG = logging.getLogger(__name__)
 

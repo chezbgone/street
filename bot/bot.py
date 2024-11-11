@@ -4,7 +4,7 @@ import logging
 import discord
 from discord.ext import commands
 
-from config import SECRETS
+from common.config import SECRETS
 
 LOG = logging.getLogger(__name__)
 

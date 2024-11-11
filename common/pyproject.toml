@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "common"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["chezbgone <chezbgone@gmail.com>"]
 readme = "README.md"
@@ -8,6 +8,12 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 boto3 = "^1.35.57"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+boto3-stubs = {extras = ["dynamodb"], version = "^1.35.56"}
 
 [build-system]
 requires = ["poetry-core"]

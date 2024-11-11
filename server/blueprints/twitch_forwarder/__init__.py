@@ -3,9 +3,9 @@ from threading import Thread
 from discord import AllowedMentions, SyncWebhook
 from quart import Blueprint, current_app
 
+from common.config import CONFIG
 from common.models import TwitchMessage
 from .twitch_listener import TwitchChatListener
-from config import CONFIG
 
 twitch_forwarder = Blueprint('twitch_forwarder', __name__)
 
