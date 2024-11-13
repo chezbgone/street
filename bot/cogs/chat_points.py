@@ -56,7 +56,7 @@ class ChatPoints(Cog):
             return
         _try_accrue_currency(message.author.id)
 
-    @commands.command()
+    @commands.hybrid_command()
     async def get_points(self, ctx: Context):
         points = currency_db.get_user_points(ctx.author.id)
         await ctx.send(f'you have {points} point{pluralize(points)}')

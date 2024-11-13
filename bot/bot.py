@@ -19,6 +19,7 @@ async def on_ready():
     LOG.info(f'Logged in as {bot.user}')
     await bot.add_cog(CommandErrorHandler(bot))
     await bot.add_cog(ChatPoints(bot))
+    await bot.tree.sync()
 
 async def main():
     await bot.start(SECRETS['DISCORD_TOKEN'])
