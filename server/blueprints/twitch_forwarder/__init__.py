@@ -16,8 +16,9 @@ def before():
     webhook_url = CONFIG['discord_stream_chat_webhook_url']
     webhook = SyncWebhook.from_url(webhook_url)
     def chat_received(message: TwitchMessage):
+        content = message.content.replace('discord.gg', '<discord.gg>')
         webhook.send(
-            message.content,
+            content,
             username=message.display_name,
             allowed_mentions=AllowedMentions.none(),
             suppress_embeds=True,
