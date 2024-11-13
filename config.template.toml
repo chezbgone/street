@@ -1,3 +1,6 @@
 production_mode = true
-twitch_channel = "..."
+
+discord_stream_chat = 12345
 discord_stream_chat_webhook_url = "https://discord.com/api/webhooks/12345/..."
+dynamodb_table = "street.discord_users"
+twitch_channel = "..."
