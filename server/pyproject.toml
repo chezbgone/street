@@ -10,7 +10,6 @@ package-mode = false
 python = "^3.11"
 hypercorn = "^0.17.3"
 quart = "^0.19.8"
-redis = "^5.2.0"
 common = {path = "../common"}
 discord = "^2.3.2"
 requests = "^2.32.3"
