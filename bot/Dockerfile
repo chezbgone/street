@@ -1,4 +1,4 @@
-FROM python:3.12-alpine as builder
+FROM python:3.12-alpine AS builder
 
 RUN pip install poetry==1.8.4
 
@@ -19,7 +19,7 @@ RUN touch README.md
 RUN poetry install --no-root && rm -rf $POETRY_CACHE_DIR
 
 # make runtime image, without build dependencies for size
-FROM python:3.12-alpine as runtime
+FROM python:3.12-alpine AS runtime
 
 ENV VIRTUAL_ENV=/app/bot/.venv \
     PATH="/app/bot/.venv/bin:$PATH"
